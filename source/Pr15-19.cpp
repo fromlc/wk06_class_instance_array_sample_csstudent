@@ -47,6 +47,7 @@ int main() {
 
     // test default constructor
     //CsStudent anonymouse;
+    g::aCsGrads[0] = CsStudent("Student", "ID000000", 2023);
 
     initApp();
 
