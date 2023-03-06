@@ -13,6 +13,9 @@ constexpr int CS_HOURS = 40;
 constexpr int MATH_HOURS = 20;
 constexpr int GEN_ED_HOURS = 60;
 
+//------------------------------------------------------------------------------
+// CsStudent
+//------------------------------------------------------------------------------
 class CsStudent : public Student {
 private:
     int mathHours;           // Hours of math taken
@@ -38,9 +41,6 @@ public:
     int getMathHours() const;
     int getCsHours() const;
     int getGenEdHours();
-
-    // override base class version
-    virtual int getYearAdmitted() const { return yearAdmitted + 1; }
 
     // override abstract Student's pure virtual function
     int getRemainingHours() const;
