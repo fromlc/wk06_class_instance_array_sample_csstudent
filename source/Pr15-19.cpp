@@ -60,7 +60,7 @@ int main() {
     displayGrads(numGrads);
 
     // or do both in one line!
-    //displayGrads(displayHours());
+    //displayGrads(processStudents());
 
     return 0;
 }
@@ -92,8 +92,6 @@ void fillVector() {
 
     g::vCsStudents.push_back(CsStudent("Guitar Hero", "167H53100", 2019));
     g::vCsStudents.back().setHours(CS_HOURS, MATH_HOURS, GEN_ED_HOURS);
-
-    // how could you make less function calls and get the same info?
 }
 
 //------------------------------------------------------------------------------
