@@ -46,7 +46,7 @@ void displayGrads(int);
 int main() {
 
     // test default constructor
-    //CsStudent anonymouse;
+    //CsStudent testStudent;
 
     initApp();
 
