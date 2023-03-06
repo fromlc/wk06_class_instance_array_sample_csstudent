@@ -29,9 +29,10 @@ public:
     CsStudent(string n, string id, int year);
 
     // mutator functions
-    void setMathHours(int);
     void setCsHours(int);
-    void setGenEdHours(int geh);
+    void setMathHours(int);
+    void setGenEdHours(int);
+    void setHours(int _csHours, int _mathHours, int _genHours);
 
     // accessor functions
     int getMathHours() const;

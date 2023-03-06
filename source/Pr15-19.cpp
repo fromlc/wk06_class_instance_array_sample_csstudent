@@ -36,8 +36,8 @@ namespace g {
 //------------------------------------------------------------------------------
 void initApp();
 void fillVector();
-void displayHoursNeeded(int&);
-void displayGrads(int);
+int processStudent();       // return value instead of storing ref parameter
+void displayGrads(int);     // accept output of displayHours()
 
 
 //------------------------------------------------------------------------------
@@ -53,12 +53,14 @@ int main() {
     // #TODO uses dummy student data
     fillVector();
 
-    // reference parameter (why do we need this?)
-    int gradCount;
-    displayHoursNeeded(gradCount);
+    // return value instead of using reference parameter
+    int numGrads = processStudent();
 
     // pass number of grad array elements
-    displayGrads(gradCount);
+    displayGrads(numGrads);
+
+    // or do both in one line!
+    //displayGrads(displayHours());
 
     return 0;
 }
@@ -83,19 +85,13 @@ void initApp() {
 void fillVector() {
     // create a CsStudent object for each student, set hours taken
     g::vCsStudents.push_back(CsStudent("Boo Radley", "167R98337", 2021));
-    g::vCsStudents.back().setCsHours(20);
-    g::vCsStudents.back().setMathHours(20);
-    g::vCsStudents.back().setGenEdHours(40);
+    g::vCsStudents.back().setHours(20, 20, 40);
 
     g::vCsStudents.push_back(CsStudent("Susie Qubit", "167Q44222", 2020));
-    g::vCsStudents.back().setCsHours(16);
-    g::vCsStudents.back().setMathHours(20);
-    g::vCsStudents.back().setGenEdHours(52);
+    g::vCsStudents.back().setHours(16, 20, 52);
 
     g::vCsStudents.push_back(CsStudent("Guitar Hero", "167H53100", 2019));
-    g::vCsStudents.back().setCsHours(CS_HOURS);
-    g::vCsStudents.back().setMathHours(MATH_HOURS);
-    g::vCsStudents.back().setGenEdHours(GEN_ED_HOURS);
+    g::vCsStudents.back().setHours(CS_HOURS, MATH_HOURS, GEN_ED_HOURS);
 
     // how could you make less function calls and get the same info?
 }
@@ -104,8 +100,9 @@ void fillVector() {
 // - display how many hours each student needs to graduate
 // - return number of students added to aCsGrads[] array in reference parameter
 //------------------------------------------------------------------------------
-void displayHoursNeeded(int& gradIndex) {
-    gradIndex = 0;
+int processStudent() {
+
+    int numGrads = 0;
 
     for (CsStudent& stu : g::vCsStudents) {
 
@@ -131,18 +128,20 @@ void displayHoursNeeded(int& gradIndex) {
 
         // if all requirements fulfilled, add student to grads array
         if (needsHours <= 0) {
-            g::aCsGrads[gradIndex++] = stu;
+            g::aCsGrads[numGrads++] = stu;
         }
     }
+
+    return numGrads;
 }
 
 //------------------------------------------------------------------------------
 // display list of new CS graduates
 //------------------------------------------------------------------------------
-void displayGrads(int gradCount) {
+void displayGrads(int numGrads) {
 
     cout << FG_YELLOW;
-    for (int i = 0; i < gradCount; ++i) {
+    for (int i = 0; i < numGrads; ++i) {
         cout << '\n' << g::aCsGrads[i].getName() << " gets to graduate!\n";
     }
     cout << RESET << '\n';
