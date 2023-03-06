@@ -18,9 +18,9 @@ private:
     int mathHours;           // Hours of math taken
     int csHours;             // Hours of Computer Science taken
     int genEdHours;          // Hours of general education taken
+    static int reqHours;     // All students need the same number of hours
 
 public:
-    static int reqHours;     // All students need the same number of hours
 
     // default constructor
     CsStudent();
@@ -44,5 +44,8 @@ public:
 
     // get all types of remaining hours
     int getRemainingHours(int&, int&, int&) const;
+
+    // access private static data from outside the class
+    static int getReqHours() { return reqHours; }
 };
 #endif

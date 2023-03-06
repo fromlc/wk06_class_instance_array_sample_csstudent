@@ -72,7 +72,7 @@ void initApp() {
     cout << FG_CYAN << "\nCS Students at HiTech U\n";
     cout << FG_YELLOW;
     cout << "\nHours needed to graduate with a CS degree: "
-        << CsStudent::reqHours << '\n';
+        << CsStudent::getReqHours() << '\n';
     cout << "\tCS hours: " << CS_HOURS << '\n';
     cout << "\tMath hours: " << MATH_HOURS << '\n';
     cout << "\tGen Ed hours: " << GEN_ED_HOURS << "\n\n";
