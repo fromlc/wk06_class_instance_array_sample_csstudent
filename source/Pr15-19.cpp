@@ -100,7 +100,7 @@ void fillVector() {
 
 //------------------------------------------------------------------------------
 // - display how many hours each student needs to graduate
-// - return number of students added to aCsGrads[] array in reference parameter
+// - return number of students added to aCsGrads[] array
 //------------------------------------------------------------------------------
 int processStudents() {
 
