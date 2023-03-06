@@ -71,3 +71,9 @@ int CsStudent::getRemainingHours(int& needCs, int& needMath, int& needGe) const 
     // return total hours needed
     return reqHours - (mathHours + csHours + genEdHours);
 }
+
+//------------------------------------------------------------------------------
+// static function returns number of hours 
+// all CS students need to graduate
+//------------------------------------------------------------------------------
+int CsStudent::getReqHours() { return CsStudent::reqHours; }

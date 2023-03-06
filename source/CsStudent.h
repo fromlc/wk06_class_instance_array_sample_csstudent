@@ -39,6 +39,9 @@ public:
     int getCsHours() const;
     int getGenEdHours();
 
+    // override base class version
+    virtual int getYearAdmitted() const { return yearAdmitted + 1; }
+
     // override abstract Student's pure virtual function
     int getRemainingHours() const;
 

@@ -31,7 +31,8 @@ public:
 
     const string getIdNum() const { return idNumber; }
 
-    int getYearAdmitted() const { return yearAdmitted; }
+    // force static binding to derived class version
+    virtual int getYearAdmitted() const { return yearAdmitted; }
 
     // pure virtual function, derived classes must override
     virtual int getRemainingHours() const = 0;

@@ -45,9 +45,11 @@ void displayGrads(int);     // accept output of displayHours()
 //------------------------------------------------------------------------------
 int main() {
 
+    //Student s;
+
     // test default constructor
     //CsStudent anonymouse;
-    g::aCsGrads[0] = CsStudent("Student", "ID000000", 2023);
+    //g::aCsGrads[0] = CsStudent("Student", "ID000000", 2023);
 
     initApp();
 
