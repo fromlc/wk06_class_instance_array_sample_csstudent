@@ -21,7 +21,9 @@ private:
     int mathHours;           // Hours of math taken
     int csHours;             // Hours of Computer Science taken
     int genEdHours;          // Hours of general education taken
-    static int reqHours;     // All students need the same number of hours
+
+    // All students need the same number of hours
+    static const int reqHours { MATH_HOURS + CS_HOURS + GEN_ED_HOURS };
 
 public:
 
