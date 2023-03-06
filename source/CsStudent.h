@@ -49,6 +49,6 @@ public:
     int getRemainingHours(int&, int&, int&) const;
 
     // access private static data from outside the class
-    static int getReqHours() { return reqHours; }
+    static int getReqHours();
 };
 #endif
