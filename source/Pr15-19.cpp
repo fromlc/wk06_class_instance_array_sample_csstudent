@@ -36,7 +36,7 @@ namespace g {
 //------------------------------------------------------------------------------
 void initApp();
 void fillVector();
-int processStudent();       // return value instead of storing ref parameter
+int processStudents();      // return value instead of storing ref parameter
 void displayGrads(int);     // accept output of displayHours()
 
 
@@ -54,7 +54,7 @@ int main() {
     fillVector();
 
     // return value instead of using reference parameter
-    int numGrads = processStudent();
+    int numGrads = processStudents();
 
     // pass number of grad array elements
     displayGrads(numGrads);
@@ -100,7 +100,7 @@ void fillVector() {
 // - display how many hours each student needs to graduate
 // - return number of students added to aCsGrads[] array in reference parameter
 //------------------------------------------------------------------------------
-int processStudent() {
+int processStudents() {
 
     int numGrads = 0;
 
