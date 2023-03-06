@@ -13,14 +13,17 @@ constexpr int CS_HOURS = 40;
 constexpr int MATH_HOURS = 20;
 constexpr int GEN_ED_HOURS = 60;
 
+//------------------------------------------------------------------------------
+// CsStudent
+//------------------------------------------------------------------------------
 class CsStudent : public Student {
 private:
     int mathHours;           // Hours of math taken
     int csHours;             // Hours of Computer Science taken
     int genEdHours;          // Hours of general education taken
+    static int reqHours;     // All students need the same number of hours
 
 public:
-    static int reqHours;     // All students need the same number of hours
 
     // default constructor
     CsStudent();
@@ -29,9 +32,10 @@ public:
     CsStudent(string n, string id, int year);
 
     // mutator functions
-    void setMathHours(int);
     void setCsHours(int);
-    void setGenEdHours(int geh);
+    void setMathHours(int);
+    void setGenEdHours(int);
+    void setHours(int _csHours, int _mathHours, int _genHours);
 
     // accessor functions
     int getMathHours() const;
@@ -43,5 +47,8 @@ public:
 
     // get all types of remaining hours
     int getRemainingHours(int&, int&, int&) const;
+
+    // access private static data from outside the class
+    static int getReqHours();
 };
 #endif

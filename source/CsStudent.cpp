@@ -22,13 +22,20 @@ CsStudent::CsStudent(string _name, string _id, int _year)
 //------------------------------------------------------------------------------
 // mutators
 //------------------------------------------------------------------------------
-void CsStudent::setMathHours(int mh) { mathHours = mh; }
-
-//------------------------------------------------------------------------------
 void CsStudent::setCsHours(int csh) { csHours = csh; }
 
 //------------------------------------------------------------------------------
+void CsStudent::setMathHours(int mh) { mathHours = mh; }
+
+//------------------------------------------------------------------------------
 void CsStudent::setGenEdHours(int geh) { genEdHours = geh; }
+
+//------------------------------------------------------------------------------
+void CsStudent::setHours(int _csHours, int _mathHours, int _genEdHours) {
+    csHours = _csHours;
+    mathHours = _mathHours;
+    genEdHours = _genEdHours;
+}
 
 //------------------------------------------------------------------------------
 // accessors
@@ -64,3 +71,9 @@ int CsStudent::getRemainingHours(int& needCs, int& needMath, int& needGe) const 
     // return total hours needed
     return reqHours - (mathHours + csHours + genEdHours);
 }
+
+//------------------------------------------------------------------------------
+// static function returns number of hours 
+// all CS students need to graduate
+//------------------------------------------------------------------------------
+int CsStudent::getReqHours() { return CsStudent::reqHours; }
